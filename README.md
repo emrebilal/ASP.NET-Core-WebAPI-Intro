@@ -1,4 +1,4 @@
-# DotNetCore-WebAPI-Intro
+# .Net Core Web API Intro
 |API|Description|Request body|Response body|
 |-|-|-|-|
 |**GET** /api/products|Get all products|None|Array of products|

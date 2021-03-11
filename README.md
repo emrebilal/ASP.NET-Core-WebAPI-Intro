@@ -1,4 +1,5 @@
 # .Net Core Web API Intro
+Creates the following API:  
 |API|Description|Request body|Response body|
 |-|-|-|-|
 |**GET** /api/products|Get all products|None|Array of products|

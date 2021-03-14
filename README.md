@@ -1,4 +1,7 @@
-# .Net Core Web API Intro
+# Building a CRUD application using ASP.NET Core Web API
+I have created a sample application with name ProductsAPI and defined routes for all the four types of HTTP methods (GET, POST, PUT, DELETE) with API paths.  
+In this app, I have not used any database. All the operations are in-memory. I saved them to a JSON file so that data would not be lost after the application was closed.
+
 Creates the following API:  
 |API|Description|Request body|Response body|
 |-|-|-|-|

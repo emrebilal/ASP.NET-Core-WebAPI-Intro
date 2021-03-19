@@ -12,22 +12,22 @@ namespace WebAPI_Intro.Controller
     [Route("api/[controller]")]
     public class ProductsController : ControllerBase
     {
-        private readonly DataManager dataManager;
-        public ProductsController()
+        private readonly DataService _dataService;
+        public ProductsController(DataService dataService)
         {
-            dataManager = DataManager.Instance;
+            _dataService = dataService;
         }
 
         [HttpGet("/api/products")]
         public List<ProductModel> GetProducts()
         {
-            return dataManager.Products;
+            return _dataService.Products;
         }
 
         [HttpGet("/api/products/{id}")]
         public ProductModel GetProduct(int id)
         {
-            var data = dataManager.Products.FirstOrDefault(c => c.Id == id);
+            var data = _dataService.Products.FirstOrDefault(c => c.Id == id);
 
             return data;
         }
@@ -35,8 +35,8 @@ namespace WebAPI_Intro.Controller
         [HttpPost("/api/products")]
         public ProductModel AddProduct([FromBody] ProductModel product)
         {
-            dataManager.Products.Add(product);
-            dataManager.SaveJsonData();
+            _dataService.Products.Add(product);
+            _dataService.SaveJsonFile();
 
             return product;
         }
@@ -44,28 +44,27 @@ namespace WebAPI_Intro.Controller
         [HttpPut("/api/products/{id}")]
         public void UpdateProduct(int id, [FromBody] ProductModel product)
         {
-            for (var index = dataManager.Products.Count - 1; index >= 0; index--)
+            for (var index = _dataService.Products.Count - 1; index >= 0; index--)
             {
-                if (dataManager.Products[index].Id == id)
+                if (_dataService.Products[index].Id == id)
                 {
-                    dataManager.Products[index] = product;
+                    _dataService.Products[index] = product;
                 }
             }
-            dataManager.SaveJsonData();
+            _dataService.SaveJsonFile();
         }
 
         [HttpDelete("/api/products/{id}")]
         public void DeleteProduct(int id)
         {
-            for (var index = dataManager.Products.Count - 1; index >= 0; index--)
+            for (var index = _dataService.Products.Count - 1; index >= 0; index--)
             {
-                if (dataManager.Products[index].Id == id)
+                if (_dataService.Products[index].Id == id)
                 {
-                    dataManager.Products.RemoveAt(index);
+                    _dataService.Products.RemoveAt(index);
                 }
             }
-            dataManager.SaveJsonData();
+            _dataService.SaveJsonFile();
         }
-
     }
 }

@@ -8,33 +8,18 @@ using WebAPI_Intro.Model;
 
 namespace WebAPI_Intro.Data
 {
-    public class DataManager
+    public class DataService
     {
-        private static readonly DataManager _instance;
+        public List<ProductModel> Products = new List<ProductModel>();
 
-        static DataManager()
-        {
-            _instance = new DataManager();
-        }
-
-        private DataManager()
+        public DataService()
         {
             FillData();
         }
 
-        public static DataManager Instance
-        {
-            get
-            {
-                return _instance;
-            }
-        }
-
-        public List<ProductModel> Products = new List<ProductModel>();
-
         public void FillData()
         {
-            string data = File.ReadAllText("sampledata.json");
+            string data = File.ReadAllText("data.json");
             List<ProductModel> tempProducts = JsonConvert.DeserializeObject<List<ProductModel>>(data);
 
             if (tempProducts != null)
@@ -46,10 +31,10 @@ namespace WebAPI_Intro.Data
             }
         }
 
-        public void SaveJsonData()
+        public void SaveJsonFile()
         {
             string newData = JsonConvert.SerializeObject(Products, Formatting.Indented);
-            File.WriteAllText("sampledata.json", newData);
+            File.WriteAllText("data.json", newData);
         }
     }
 }

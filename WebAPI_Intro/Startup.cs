@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebAPI_Intro.Data;
 
 namespace WebAPI_Intro
 {
@@ -17,6 +18,7 @@ namespace WebAPI_Intro
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSingleton(new DataService());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

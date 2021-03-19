@@ -57,11 +57,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Emre\\source\\repos\\WebAPI_Intro\\WebAPI_Intro\\WebAPI_Intro.csproj",
+      "projectUniqueName": "C:\\Users\\Emre\\Downloads\\NetCore-WebAPI-Intro-main\\WebAPI_Intro\\WebAPI_Intro.csproj",
       "projectName": "WebAPI_Intro",
-      "projectPath": "C:\\Users\\Emre\\source\\repos\\WebAPI_Intro\\WebAPI_Intro\\WebAPI_Intro.csproj",
+      "projectPath": "C:\\Users\\Emre\\Downloads\\NetCore-WebAPI-Intro-main\\WebAPI_Intro\\WebAPI_Intro.csproj",
       "packagesPath": "C:\\Users\\Emre\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Emre\\source\\repos\\WebAPI_Intro\\WebAPI_Intro\\obj\\",
+      "outputPath": "C:\\Users\\Emre\\Downloads\\NetCore-WebAPI-Intro-main\\WebAPI_Intro\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Emre\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -113,7 +113,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
